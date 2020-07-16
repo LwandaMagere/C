@@ -27,23 +27,17 @@ int sum(int a, ...)
     int s = 0, i, num;
     va_list var, v2;
     va_start(var, a);
-    va_copy(v2, var);
+   // va_copy(v2, var);
 
-    for ( i = 0; i < a; i++)
-    {
-        num = va_arg(v2, int);
-        s = s + num;
-    }
-
-  /*  while (1)
+    while (1)
     {
         num = va_arg(var, int);
         if (num == 0)
             break;
         else 
             s = s + num;
-    }*/
+    }
     va_end(var); // deallocating memory
-    va_end(v2);
+   // va_end(v2);
     return s;
 }
