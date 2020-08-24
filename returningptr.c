@@ -8,6 +8,8 @@ int main()
     int n = sizeof(a) / sizeof(a[0]);
     int * mid = findMid(a, n);
     printf("%d\n", *mid);
+
+    int * p = 1000;
     return 0;
 }
 

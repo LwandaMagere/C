@@ -8,6 +8,8 @@ int main()
 	struct location url;
 	struct web_data curl_data;
 
+	
+
 	/* initialize structure */
 	/* curl_data and url structures must be kept separate or the
 	   call the curl makes to write_mem() screws up */
