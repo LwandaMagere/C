@@ -15,7 +15,7 @@ void fetch(int v, char* csv, char* f)
 	/* ensure that v is valid */
 	if (v < 1)
 	{
-		fprintf(stderr, "Inavlid field for CSV string\n");
+		fprintf(stderr, "Invalid field for CSV string\n");
 		exit(1);
 	}
 

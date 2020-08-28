@@ -40,7 +40,7 @@ int main()
 	/* confirm that the call was successful, bail if not */
 	if (res != CURLE_OK)
 	{
-		fprintf(stderr, "Curl read failed: %s\n",
+		fprintf(stderr, "Curl read failed, Iwes make bwana: %s\n",
 			curl_easy_strerror(res)
 			);
 		exit(1);
