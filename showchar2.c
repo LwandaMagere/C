@@ -5,7 +5,7 @@ void display(char cr, int lines, int width);
 
 int main()
 {
-    int ch;
+    int ch; 
     int rows, cols;
 
     printf("Enter a character and two integers:\n");
