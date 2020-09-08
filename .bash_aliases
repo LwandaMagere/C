@@ -1,0 +1,1 @@
+alias getdates='date | tee /home/luanda/ test.txt | cut --delimiter =" " --fields=1 | tee /home/luanda/hello.txt | xargs echo hello Dado'

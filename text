@@ -1,2 +1,0 @@
-g++ Timber.cpp -o smlf-app -lsfml-graphics -lsfml-window -lsfml-system
-  ./smlf-app

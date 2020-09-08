@@ -1,3 +1,4 @@
-Dado Oduor Onyango, Lwanda Magere Legacy
-I Do Hard Stuff
-This is me Bwana
+a.out
+error.txt
+LwandaMagere
+text
