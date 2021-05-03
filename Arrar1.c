@@ -1,5 +1,12 @@
 #include <stdio.h>
-#define MAXLINE 1000 // Maximum input line length
+
+int main()
+{
+    puts("C Rocks!");
+    return 0;
+}
+
+/*#define MAXLINE 1000 // Maximum input line length
 
 int getline(char line[], int maxline);
 void copy(char to[], char from[]);
@@ -50,4 +57,4 @@ s[i] = c;
 s[i] = '\0';
 return i;
 }
-
+*/
