@@ -2,7 +2,11 @@
 /* count digits, white space, others */
 int main()
 {
-    int c, i, nwhite, nother;
+     puts("C Rocks!");
+
+
+
+   /* int c, i, nwhite, nother;
     int ndigit[10];
 
     nwhite = nother = 0;
@@ -20,6 +24,6 @@ int main()
     for (i = 0; i < 10; ++i)
         printf(" %d", ndigit[i]);
     printf(", white space = %d, other = %d\n", nwhite, nother);
-    printf("%d", ndigit[c - '0']);
+    printf("%d", ndigit[c - '0']);*/
     return 0;
 }
