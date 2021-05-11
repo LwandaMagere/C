@@ -7,6 +7,16 @@ int main()
      int card_count = 11;
      if (card_count > 10)
         puts("The deck is hot. Increase bet.\n");
+
+    int decks;
+    puts("Enter a number of decks\n");
+    scanf("%i", &decks);
+    if (decks < 1)
+    {
+        puts("That is not a valid number of decks\n");
+        return 1;
+    }
+    printf("There are %i cards\n", (decks * 52));
     
     int c = 10;
     while (c > 0)
