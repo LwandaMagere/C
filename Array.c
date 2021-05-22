@@ -1,20 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 /* count digits, white space, others */
+
+  void go_south_east(int lat, int lon)
+    {
+        lat = lat - 1;
+        lon = lon + 1;
+    }
+
 int main()
 {
-    char card_name[3];
-    puts("Enter the card_name: ");
-    scanf("%2s", card_name);
-    int val = 0;
-    if (card_name[0] == 'K')
-    {
-        val = 10;
-    }
-    else if ( card_name[0] == 'Q')
-        val = 10;
-        
+    int  x = 4;
+    printf("x  is stored at %p\n", &x);
 
+    int contestants[] = {1, 2, 3, 4};
+    int *choice = contestants;
+    contestants[0]= 2;
+    contestants[1] = contestants[2];
+    contestants[2] = *choice;
+    printf("I'm going to pick contestant number %i\n", contestants[2]);
+
+  
 
 
    /* int c, i, nwhite, nother;
