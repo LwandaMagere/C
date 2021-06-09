@@ -1,24 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-/* count digits, white space, others */
+#include <string.h>
 
-  void go_south_east(int lat, int lon)
+char tracks[][80] = 
+{
+    "I left my heart in Harvad Med School",
+    "Newark, Newark - a wonderful town",
+    "Dancing with a Dork",
+    "From here to maternity",
+    "The girl from Iwo Jima",
+};
+
+void find_track(char search_for[])
+{
+    int i;
+    for (i = 0; i < 5; i++)
     {
-        lat = lat - 1;
-        lon = lon + 1;
+        if (strstr(tracks[i], search_for))
+            printf("Tracks %i: '%s'\n", i, tracks[i]);
     }
+}
+
+
+ 
 
 int main()
 {
-    int  x = 4;
-    printf("x  is stored at %p\n", &x);
-
-    int contestants[] = {1, 2, 3, 4};
-    int *choice = contestants;
-    contestants[0]= 2;
-    contestants[1] = contestants[2];
-    contestants[2] = *choice;
-    printf("I'm going to pick contestant number %i\n", contestants[2]);
+    char search_for[80];
+    printf("search for: ");
+    fgets(search_for, 80, stdin);
+    find_track(search_for);
 
   
 
