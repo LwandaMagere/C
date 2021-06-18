@@ -6,22 +6,37 @@
 
 int main()
 {
-    float latitude;
-    float longitude;
-    char info[80];
+    int card_count =  11;
+    if (card_count > 10)
+        puts("The deck is hot. Increase bet");
 
-    int started = 0;
+    int c = 10;
+    while (c > 0)
+        puts("I must not write code in class");
+        c = c - 1;
 
-    puts("data=[");
-    while (scanf("%f,%f,%79[^\n]", &latitude, &longitude, info) == 3)
+    char ex[20];
+    puts("Enter girlfriend's name: ");
+    scanf("%19s", ex);
+    printf("Dear %s.\n\n\tYou're history.\n", ex);
+
+    char suit = 'H';
+    switch(suit)
     {
-        if (started)
-            printf(",\n");
-        else
-            started = 1;
-        printf("{latitude: %f, longitude: %f, info: '%s'}", latitude, longitude, info);
+        case 'C':
+            puts("Clubs");
+            break;
+        case 'D':
+            puts("Diamonds");
+            break;
+        case 'H':
+            puts("Hearts");
+            break;
+        default:
+            puts("Spades");
     }
-    puts("\n]");
+
+    
 
 
    /* int c, i, nwhite, nother;
