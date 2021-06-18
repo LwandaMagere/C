@@ -2,36 +2,26 @@
 #include <stdlib.h>
 #include <string.h>
 
-char tracks[][80] = 
-{
-    "I left my heart in Harvad Med School",
-    "Newark, Newark - a wonderful town",
-    "Dancing with a Dork",
-    "From here to maternity",
-    "The girl from Iwo Jima",
-};
-
-void find_track(char search_for[])
-{
-    int i;
-    for (i = 0; i < 5; i++)
-    {
-        if (strstr(tracks[i], search_for))
-            printf("Tracks %i: '%s'\n", i, tracks[i]);
-    }
-}
-
-
  
 
 int main()
 {
-    char search_for[80];
-    printf("search for: ");
-    fgets(search_for, 80, stdin);
-    find_track(search_for);
+    float latitude;
+    float longitude;
+    char info[80];
 
-  
+    int started = 0;
+
+    puts("data=[");
+    while (scanf("%f,%f,%79[^\n]", &latitude, &longitude, info) == 3)
+    {
+        if (started)
+            printf(",\n");
+        else
+            started = 1;
+        printf("{latitude: %f, longitude: %f, info: '%s'}", latitude, longitude, info);
+    }
+    puts("\n]");
 
 
    /* int c, i, nwhite, nother;
