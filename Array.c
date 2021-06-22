@@ -9,8 +9,7 @@ int main()
     int card_count =  11;
     if (card_count > 10)
         puts("The deck is hot. Increase bet");
-
-    int c = 10;
+    int c =  10;
     while (c > 0)
         puts("I must not write code in class");
         c = c - 1;
