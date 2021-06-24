@@ -8,11 +8,14 @@ int main()
 {
     int card_count =  11;
     if (card_count > 10)
-        puts("The deck is hot. Increase bet");
-    int c =  10;
+        puts("The deck is hot. Increase bet.");
+
+    int c  = 10;
     while (c > 0)
+    {
         puts("I must not write code in class");
         c = c - 1;
+    }
 
     char ex[20];
     puts("Enter girlfriend's name: ");
@@ -26,15 +29,13 @@ int main()
             puts("Clubs");
             break;
         case 'D':
-            puts("Diamonds");
+            puts("Diamond");
             break;
         case 'H':
             puts("Hearts");
-            break;
         default:
             puts("Spades");
     }
-
     
 
 
