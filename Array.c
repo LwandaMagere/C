@@ -6,23 +6,37 @@
 
 int main()
 {
-    char card_name[3];
-    puts("Enter the card_name: ");
-    scanf("%2s", card_name);
-    int val = 0;
-    if (card_name[0] == 'K')
+    int card_count = 11;
+    if (card_count > 10)
+        puts("The deck is hot. Inrease bet");
+
+    int c =  10;
+    while (c > 0)
     {
-        val = 10;
+        puts("I must not write code in class");
+        c = c - 1;
     }
-    else if (card_name[0] == 'Q')
-        val = 10;
-    else if (card_name[0] == 'A')
-        val = 11;
-    else 
+
+    char ex[20];
+    puts("Enter girlfriend's name: ");
+    scanf("%19s", ex);
+    printf("Dear %s.\n\n\tYou're So Blessed.\n", ex);
+
+    char suit = 'H';
+    switch(suit)
     {
-        val = atoi(card_name);
+        case 'C':
+            puts("Clubs");
+            break;
+        case 'D':
+            puts("Diamond");
+            break;
+        case 'H':
+            puts("Hearts");
+            break;
+        default:
+            puts("Spades");
     }
-    printf("The card value is: %i\n", val);
 
    /* int c, i, nwhite, nother;
     int ndigit[10];
