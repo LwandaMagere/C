@@ -24,15 +24,21 @@ printf("Track %i: '%s'\n", i, tracks[i]);
 
 int main()
 {
-    
-        char search_for[80];
+    float latitude;
+    float longitude;
+    char info[80];
+    int started = 0;
 
-printf("Search for: ");
-fgets(search_for, 80, stdin);
-find_track(search_for);
-   
-   
-
+    puts("data=[");
+    while (scanf("%f, %f %79[^\n]", &latitude, &longitude, info) == 3)
+    {
+        if (started)
+            printf(",\n");
+        else
+            started = 1;
+        printf("{latitude: %f, longitude: %f, info: '%s'}", latitude, longitude, info);
+    }
+    puts("\n]");
    /* int c, i, nwhite, nother;
     int ndigit[10];
 
