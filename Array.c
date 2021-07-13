@@ -2,43 +2,30 @@
 #include <stdlib.h>
 #include <string.h>
 
-char tracks[][80] = {
-"I left my heart in Harvard Med School",
-"Newark, Newark - a wonderful town",
-"Dancing with a Dork",
-"From here to maternity",
-"The girl from Iwo Jima",
-};
-
-void find_track(char search_for[])
-{
-
-int i;
-for (i = 0; i < 5; i++) {
-if (strstr(tracks[i], search_for))
-printf("Track %i: '%s'\n", i, tracks[i]);
-}
-}
-
- 
-
 int main()
 {
-    float latitude;
-    float longitude;
-    char info[80];
-    int started = 0;
-
-    puts("data=[");
-    while (scanf("%f, %f %79[^\n]", &latitude, &longitude, info) == 3)
+    
+    char line[80];
+    FILE *in = fopen("sppoky.csv", "r");
+    FILE *file1 = fopen("ufos.csv", "w");
+    FILE *file2 = fopen("disappearance.csv", "w");
+    FILE *file3 = fopen("others.csv", "w");
+    while (fscanf(in, "%79[^\n]", line) == 1)
     {
-        if (started)
-            printf(",\n");
-        else
-            started = 1;
-        printf("{latitude: %f, longitude: %f, info: '%s'}", latitude, longitude, info);
+        if (strstr(line, "UFO"))
+            fprintf(file1, "%s\n", line);
+        else if (strstr(line, "Disappearance"))
+            fprintf(file2, "%s\n", line);
+        else 
+            fprintf(file3, "%s\n", line);
     }
-    puts("\n]");
+    fclose(file1);
+    fclose(file2);
+    fclose(file3);
+
+
+
+
    /* int c, i, nwhite, nother;
     int ndigit[10];
 
