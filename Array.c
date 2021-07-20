@@ -14,7 +14,7 @@ int main(void)
     while (scanf("%d", &number) == 1)
     {
         itobs(number, bin_str);
-        printf("%d is", number);
+        printf("%d is ", number);
         show_bstr(bin_str);
         putchar('\n');
     }
