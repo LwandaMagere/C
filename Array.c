@@ -1,22 +1,49 @@
 #include <stdio.h>
-#define JUST_CHECKING
-#define LIMIT 4
+#include <limits.h>   // for CHAR_BIT, # of bits per char
 
+char * itobs(int, char *);
+void show_bstr(const char *);
 
 int main(void)
 {
-    int i;
-    int total  = 0;
+    char bin_str[CHAR_BIT * sizeof(int) + 1];
+    int number;
 
-    for (i = 1; i <= LIMIT; i++)
+    puts("Enter integers and see them in binary.");
+    puts("Non-numeric input terminates program.");
+    while (scanf("%d", &number) == 1)
     {
-        total += 2*i*i + 1;
-#ifdef JUST_CHECKING
-        printf("i=%d, running total = %d\n", i, total);
-#endif
+        itobs(number, bin_str);
+        printf("%d is", number);
+        show_bstr(bin_str);
+        putchar('\n');
     }
-    printf("Grand total = %d\n", total);
-
+    puts("Bye!");
+    
     
     return 0;
+}
+
+char * itobs(int n, char * ps)
+{
+    int i;
+    const static int size = CHAR_BIT * sizeof(int);
+
+    for (i = size - 1; i >= 0; i--, n >>= 1)
+        ps[i] = (01 & n) + '0'; // assume ASCII or similar
+        ps[size] = '\0';
+
+    return ps;
+}
+
+/* show binary string in block of 4 */
+void show_bstr(const char * str)
+{
+    int i  = 0;
+    while (str[i]) // not the null character
+    {
+        putchar(str[i]);
+        if (++i % 4 == 0 && str[i])
+            putchar(' ');
+    }
 }
