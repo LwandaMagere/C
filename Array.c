@@ -1,32 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h> // exit() prototype
+#include <limits.h>
+char * itobs(int, char *);
+void show_bstr(const char *);
 
 
 
-int main(int argc, char *argv[])
+int main(void)
 {
-    int ch; //place to store each character as read
-    FILE *fp;   // file pointer
-    unsigned long count = 0;
-    if (argc != 2)
-    {
-        printf("Usage: %s filename\n", argv[0]);
-        exit(EXIT_FAILURE);
-    }
-    if ((fp = fopen(argv[1], "r")) == NULL)
-    {
-        printf("Can't open %s\n", argv[1]);
-        exit(EXIT_FAILURE);
-    }
-    while ((ch = getc(fp)) != EOF)
-    {
-        putc(ch,stdout); // same as putchar(ch);
-        count++;
-    }
-    fclose(fp);
-    printf("File %s has %lu character\n", argv[1], count);
     
-    
-    return 0;
+}
+
+char * itobs(int n, char * ps)
+{
+    int i;
+    const static int size = CHAR_BIT * sizeof(int);
+
+    for (i = size - 1; i >= 0; i--, n >>= 1)
+        ps[i] = (01 & n) + '0'; // assume ASCII or similar
+    ps[size] = '\0';
+
+    return ps;
 }
 
